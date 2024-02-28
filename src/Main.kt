@@ -35,9 +35,8 @@ class Stack<T>(){
 //    }
 }
 
-fun reverse(){
-
-
+fun <T> reverse(list: List<T>): List<T>{
+    return list.reversed()
 }
 
 
@@ -45,13 +44,18 @@ fun reverse(){
 
 fun main() {
 
-
-
+//Se usará este código para probar el correcto funcionamiento:
+var numbers = listOf("one", true, 3.14f, "four")
+var numbersRev:List<Any> = reverse(numbers)
+if (!listOf("four", 3.14f, true, "one").equals(numbersRev))
+println("Error")
+else
+println("Correcto")
+println(numbersRev)
 }
 
 
 
-//Se usará este código para probar el correcto funcionamiento:
 
 //var numbers = listOf("one", "two", "three", "four")
 //var numbersRev:List = reverse(numbers)
