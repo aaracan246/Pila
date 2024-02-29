@@ -22,7 +22,7 @@ class Stack<T>(){
 
     fun top(): T?{
         return if (itemsStack.isNotEmpty()){
-            itemsStack.first()
+            itemsStack.last() // había puesto el first()
         }
         else{
             println("La pila está vacía.")
