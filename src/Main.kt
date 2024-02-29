@@ -30,13 +30,29 @@ class Stack<T>(){
         }
     }
 
-//    fun isEmpty(): Boolean{                   <- comprobar esto porque hace literalmente lo contrario a .isNotEmpty
-//        return itemsStack.isEmpty()
-//    }
+   fun isEmpty(): Boolean{                  // <- comprobar esto porque hace literalmente lo contrario a .isNotEmpty
+        return itemsStack.isEmpty()
+   }
 }
 
 fun <T> reverse(list: List<T>): List<T>{
-    return list.reversed()
+    //return list.reversed()
+
+    val pila = Stack<T>()
+    val iterador = list.iterator()
+
+    while(iterador.hasNext()){
+        pila.push(iterador.next())
+
+    }
+
+    val listaInvertida = mutableListOf<T>()
+    while (!pila.isEmpty()){
+        pila.pop()?.let{
+            listaInvertida.add(it)
+        }
+    }
+    return listaInvertida
 }
 
 
